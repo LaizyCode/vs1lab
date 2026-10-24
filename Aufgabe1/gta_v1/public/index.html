@@ -31,18 +31,18 @@
                 <fieldset>
                     <legend>Add a new GeoTag</legend>
                     <label for="tag-form-latitude">Latitude:</label>
-                    <input id="tag-form-latitude" type="text" placeholder="e.g. 49.0149954" readonly required>
+                    <input id="tag-form-latitude" type="text" value="123" placeholder="e.g. 49.0149954" readonly required>
 
                     <label for="tag-form-longitude">Longitude:</label>
-                    <input id="tag-form-longitude" type="text" placeholder="e.g. 8.3911847" readonly required>
+                    <input id="tag-form-longitude" type="text" value="123" placeholder="e.g. 8.3911847" readonly required>
 
                     <label for="tag-form-name">Name:</label>
                     <input id="tag-form-name" type="text" placeholder="e.g. HKA E-Gebäude" maxlength="10" required>
 
                     <label for="tag-form-hashtag">Hashtag:</label>
-                    <input id="tag-form-hashtag" type="text" placeholder="e.g. #HKA-E" maxlength="11">
+                    <input id="tag-form-hashtag" type="text" placeholder="e.g. #HKA-E" maxlength="11" pattern="#[A-Za-z]{10}">
 
-                    <input type="button" value="Add Tag">
+                    <input type="submit" value="Add Tag">
                 </fieldset>
                 <!-- ... your code here ... -->
             </form>
@@ -63,12 +63,12 @@
                     <input id="discoveryFilterForm-searchterm" type="text" placeholder="e.g. HKA E-Gebäude">
 
                     <label for="discoveryFilterForm-latitude" hidden>Latitude:</label>
-                    <input id="discoveryFilterForm-latitude" type="text" hidden>
+                    <input id="discoveryFilterForm-latitude" type="text" value="123" readonly>
 
                     <label for="discoveryFilterForm-longitude" hidden>Longitude:</label>
-                    <input id="discoveryFilterForm-longitude" type="text" hidden>
+                    <input id="discoveryFilterForm-longitude" type="text" value="456" readonly>
                 
-                    <input type="button" value="Search">
+                    <input type="submit" value="Search">
                 </fieldset>
                 <!-- ... your code here ... -->
 
