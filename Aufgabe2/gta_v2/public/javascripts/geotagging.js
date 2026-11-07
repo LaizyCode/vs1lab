@@ -88,6 +88,25 @@ class LocationHelper {
            alert(error.message)
         });
     }
+
+    static updateLocation(location){
+        const lat = location.latitude;
+        const lon = location.longitude;
+
+        document.getElementById("tag-form-latitude").value = lat;
+        document.getElementById("tag-form-longitude").value = lon;
+        document.getElementById("discoveryFilterForm-longitude").value = lon.longitude;
+        document.getElementById("discoveryFilterForm-latitude").value = lat;
+    
+        const map = new MapManager();
+        map.initMap(lat, lon);
+        map.updateMarkers(lat, lon);
+
+        const div = document.getElementById("map");
+        div.querySelector("img").remove();
+        div.querySelector("span").remove();
+        
+    }
 }
 
 /**
@@ -107,9 +126,9 @@ class MapManager {
     initMap(latitude, longitude, zoom = 18) {
         // set up dynamic Leaflet map
         this.#map = L.map('map').setView([latitude, longitude], zoom);
-        var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        var mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
-            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors'}).addTo(this.#map);
         this.#markers = L.layerGroup().addTo(this.#map);
     }
@@ -143,5 +162,5 @@ class MapManager {
 
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
-    alert("Please change the script 'geotagging.js'");
+    LocationHelper.findLocation(LocationHelper.updateLocation);
 });
