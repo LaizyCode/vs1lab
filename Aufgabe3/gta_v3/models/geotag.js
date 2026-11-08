@@ -11,8 +11,20 @@
  */
 class GeoTag {
 
-    // TODO: ... your code here ...
+    /**
+     * Create a GeoTag instance.
+     * @param {number|string} latitude - The latitude component of the location.
+     * @param {number|string} longitude - The longitude component of the location.
+     * @param {string} name - The name of the GeoTag location.
+     * @param {string} [hashtag=''] - The optional hashtag for the location.
+     */
     
+    constructor(latitude, longitude, name, hashtag = '') {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.hashtag = hashtag;
+    }
 }
 
 module.exports = GeoTag;
