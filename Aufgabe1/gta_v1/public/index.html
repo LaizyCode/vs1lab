@@ -39,11 +39,11 @@
                     </div>
                     <div class="input__container">
                         <label for="tag-form-name">Name:</label>
-                        <input id="tag-form-name" type="text" placeholder="e.g. HKA E-Gebäude" maxlength="10" required>
+                        <input id="tag-form-name" type="text" placeholder="e.g. HKA E-Gebäude" maxlength="10" pattern="[A-Za-z]" required>
                     </div>
                     <div class="input__container">
                         <label for="tag-form-hashtag">Hashtag:</label>
-                        <input id="tag-form-hashtag" type="text" placeholder="e.g. #HKA-E" maxlength="11" pattern="#[A-Za-z]{1, 10}">
+                        <input id="tag-form-hashtag" type="text" placeholder="e.g. #HKAE" maxlength="11" pattern="#[A-Za-z]{1, 10}">
                     </div>
 
                     <input type="submit" value="Add Tag">
@@ -66,10 +66,10 @@
                     </div>
                     
                     <label for="discoveryFilterForm-latitude" hidden>Latitude:</label>
-                    <input id="discoveryFilterForm-latitude" type="text" hidden>
+                    <input id="discoveryFilterForm-latitude" type="text" value="123" hidden>
                     
                     <label for="discoveryFilterForm-longitude" hidden>Longitude:</label>
-                    <input id="discoveryFilterForm-longitude" type="text" hidden>
+                    <input id="discoveryFilterForm-longitude" type="text" value="123" hidden>
                 
                     <input type="submit" value="Search">
                 </fieldset>
